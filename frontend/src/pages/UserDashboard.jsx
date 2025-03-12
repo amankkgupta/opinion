@@ -13,7 +13,7 @@ const UserDashboard = () => {
     totalPages,
     currPage,
     isLoading,
-    errorMessage,
+    errorMessage
   } = useSelector((states) => states.userDebates);
 
   const [isCreatePop, setIsCreatePop] = useState(false);

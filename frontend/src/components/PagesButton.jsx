@@ -2,10 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { fetchUserDebates, setCurrPage } from "../redux/slices/userDebateSlice";
 import { toast } from "react-toastify";
-import {
-  fetchAllDebates,
-  setCurrPage as allSetCurrPage,
-} from "../redux/slices/allDebatesSlice";
+
 
 const PagesButton = ({
   from,

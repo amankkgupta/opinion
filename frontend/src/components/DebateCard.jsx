@@ -1,25 +1,11 @@
 import React, { useRef, useState } from "react";
 import { format } from "date-fns";
-import { Heart, ThumbsUp } from "lucide-react";
+import { Heart } from "lucide-react";
 import { useDispatch } from "react-redux";
-import { likeRequest, setLiked } from "../redux/slices/allDebatesSlice";
 import { BiSolidUpvote } from "react-icons/bi";
 import { useNavigate } from "react-router-dom";
-import {
-  setQno,
-  setDebate,
-  setLike,
-  fetchVotes,
-} from "../redux/slices/votingSlice";
-import {
-  ResponsiveContainer,
-  Tooltip,
-  Legend,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-} from "recharts";
+
+
 
 const DebateCard = ({ debate, liked, Qno, isMine, currPage, ind }) => {
   const dispatch = useDispatch();
@@ -32,7 +18,6 @@ const DebateCard = ({ debate, liked, Qno, isMine, currPage, ind }) => {
     dispatch(setDebate(debate));
     dispatch(setLike({act:false, liked}));
     dispatch(setQno(Qno));
-    navigate(`/voting/${currPage}/${ind}`);
   };
 
   const handleLike = (_id, index) => {
